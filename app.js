@@ -12,7 +12,16 @@ var app = express();
 
 //Sending email here
 var mail = require('./nodeMailerWithTemp');
-mail.sendPasswordReset('olyjoshone@gmail.com', 'Ogirima','Joshua Aroke','http://yourdomain.com/some-password-links');
+
+/**
+* Don't forget to change your receipient details here
+* I need to modeify this as most people who followed this tutorial always end up sending mail to me instead
+*/
+var receiver = 'receiver@example.com';
+var username = 'theUsername';
+var name = 'theNameOfTheUser';
+var password = 'http://yourdomain.com/some-password-links';
+mail.sendPasswordReset(receiver, username, name, passwordToken);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
